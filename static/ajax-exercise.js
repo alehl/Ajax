@@ -16,16 +16,17 @@ function replaceFortune(){
 }
 
 
-
-
-
 // PART 2: SHOW WEATHER
+
+function showWeather(evt) {
+    $('#weather-info.json').html(result['forecast']);
+}
 
 function showWeather(evt) {
     evt.preventDefault();
 
     var url = "/weather?zipcode=" + $("#zipcode-field").val();
-
+    $.get(url, successHelper);
     // TODO: request weather with that URL and show the forecast in #weather-info
 }
 
